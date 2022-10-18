@@ -11,32 +11,31 @@
   */
 int _printf(const char *format, ...)
 {
-	int count, i;
-	const char *str;
+	int count = 0, i, a;
 
 	va_list(arg);
 	va_start(arg, format);
 
-	for (str = format; *str != '\0'; str++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		count = va_arg(arg, int);
-		while (*str != '%')
+		va_arg(arg, int);
+		while (format[i] != '%')
 		{
-			putchar(*str);
-			str++;
+			putchar(format[i]);
+			i++;
 		}
-		str++;
+		i++;
 
-		switch (*str)
+		switch (format[i])
 		{
 			case 'c':
-				i = va_arg(arg, int);
-				printChar(i);
+				a = va_arg(arg, int);
+				printChar(a);
 				break;
 
 			case '%':
-				i = va_arg(arg, int);
-				percent(i);
+				a = va_arg(arg, int);
+				percent(a);
 				break;
 		}
 		count++;
