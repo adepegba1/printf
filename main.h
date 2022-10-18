@@ -3,4 +3,5 @@
 #include <unistd.h>
 int _printf(const char *format, ...);
 int print_char(char c);
+int percent(char d);
 #endif
