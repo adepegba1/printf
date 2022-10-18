@@ -1,5 +1,6 @@
 #include "main.h"
-#include <stdarg.h>
+#include <stdio.h>
+
 
 /**
   *_printf - own personal printf
@@ -30,12 +31,12 @@ int _printf(const char *format, ...)
 		{
 			case 'c':
 				i = va_arg(arg, int);
-				print_char(i);
+				putchar (i);
 				break;
 
 			case '%':
 				i = va_arg(arg, int);
-				percent(i);
+				putchar (i);
 				break;
 		}
 		count++;

@@ -6,7 +6,7 @@
   *@c: character entered
   *Return: 1 if true or -1 otherwise
   */
-int print_char(char c)
+int printChar(char c)
 {
 	return (write(1, &c, 1));
 }
