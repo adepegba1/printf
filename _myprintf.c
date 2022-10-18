@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		count = va_arg(arg, int);
 		while (*str != '%')
 		{
-			write(1, &*str, 1);
+			putchar(*str);
 			str++;
 		}
 		str++;
@@ -31,12 +31,12 @@ int _printf(const char *format, ...)
 		{
 			case 'c':
 				i = va_arg(arg, int);
-				putchar (i);
+				printChar(i);
 				break;
 
 			case '%':
 				i = va_arg(arg, int);
-				putchar (i);
+				percent(i);
 				break;
 		}
 		count++;
