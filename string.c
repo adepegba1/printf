@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
-  *string - for thr specifier for string character
+  *string_length - for thr specifier for string character
   *
   *@s: the string entered
   *
@@ -10,6 +10,7 @@
 int string_length(char *s)
 {
 	int len = 0;
+
 	while (*s != '\0')
 	{
 		s++;
